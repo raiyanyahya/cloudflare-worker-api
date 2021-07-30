@@ -4,7 +4,7 @@ addEventListener('fetch', event => {
 
 // A list of allowed origins that can access our backend API
 const allowedOrigins = [
-  'https://*.raiyanyahya.workers.dev'
+  'https://test.raiyanyahya.workers.dev'
 ]
 
 // A function that returns a set of CORS headers
