@@ -1,0 +1,23 @@
+name: deploy api to cloudflare
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  deploy: 
+    runs-on: ubuntu-latest
+    name: "deploy api to cloudflare"
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+          registry-url: https://registry.npmjs.org/
+      - name: "Deploy to Cloudflare"
+        run: |
+             npx @cloudflare/wrangler publish
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
