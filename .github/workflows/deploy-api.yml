@@ -17,7 +17,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: "Deploy to Cloudflare"
         run: |
-             npx @cloudflare/wrangler publish
+             npx @cloudflare/wrangler CF_ACCOUNT_ID=$CF_ACCOUNT_ID CF_API_TOKEN=$CF_API_TOKEN publish
         env:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
