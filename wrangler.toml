@@ -1,0 +1,3 @@
+name = "test"
+type = "javascript"
+workers_dev = true
