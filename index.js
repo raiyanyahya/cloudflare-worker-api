@@ -32,7 +32,7 @@ const getResponse = async event => {
   const allowedOrigin = checkOrigin(event.request)
 
   return new Response(
-    JSON.stringify({ x: 5, y: 6 }),
+    JSON.stringify({ name: "nafees", y: 6 }),
     { headers: { 'Content-type': 'application/json', ...corsHeaders(allowedOrigin) } }
   )
 }
